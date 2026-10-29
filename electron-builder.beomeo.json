@@ -1,0 +1,27 @@
+{
+    "extends": "./electron-builder.json",
+    "appId": "org.playentry.entry.beomeo",
+    "productName": "Entry Beomeo",
+    "artifactName": "Entry-Beomeo-${version}-${arch}-Setup.${ext}",
+    "npmRebuild": false,
+    "beforePack": "scripts/check-windows-native.js",
+    "extraMetadata": {
+        "version": "2.1.36-beomeo.1",
+        "productName": "Entry Beomeo"
+    },
+    "win": {
+        "target": [{ "target": "nsis", "arch": ["x64"] }],
+        "signAndEditExecutable": false
+    },
+    "nsis": {
+        "oneClick": false,
+        "perMachine": false,
+        "allowToChangeInstallationDirectory": true,
+        "createDesktopShortcut": true,
+        "createStartMenuShortcut": true,
+        "shortcutName": "범어중 엔트리"
+    },
+    "directories": {
+        "output": "dist/beomeo-windows"
+    }
+}
